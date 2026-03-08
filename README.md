@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# UnitFlow
 
-## Getting Started
+UnitFlow is a landlord operations assistant focused on one painful workflow:
+- maintenance intake
+- notice generation
+- follow-up automation
 
-First, run the development server:
+This repo currently contains:
+- Next.js app scaffold
+- V1 planning docs (PRD, UX, schema, API, roadmap)
 
+## Docs
+- [V1 PRD](docs/unitflow-prd-v1.md)
+- [Screen Spec](docs/unitflow-screen-spec.md)
+- [Schema SQL](docs/unitflow-schema.sql)
+- [API + 30-Day Roadmap](docs/unitflow-api-roadmap.md)
+- [Supabase Migration](supabase/migrations/20260308152500_unitflow_v1.sql)
+
+## Local Development
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Current Build Order
+1. Auth + org model
+2. Properties/units/contacts CRUD
+3. Ticket workflow + timeline
+4. AI triage + reply drafts
+5. Reminders + document generation
+6. Billing + onboarding + launch pages
