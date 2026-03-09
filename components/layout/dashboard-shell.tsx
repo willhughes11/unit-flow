@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { UserButton } from "@clerk/nextjs";
 import { dashboardNav } from "@/lib/navigation";
 
 export function DashboardShell({ children }: { children: React.ReactNode }) {
@@ -6,9 +7,12 @@ export function DashboardShell({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen bg-slate-50">
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-6 px-4 py-6 sm:px-6 lg:grid-cols-[240px_1fr] lg:px-8">
         <aside className="rounded-xl border border-slate-200 bg-white p-4">
-          <Link href="/dashboard" className="mb-4 block text-lg font-semibold text-slate-900">
-            UnitFlow
-          </Link>
+          <div className="mb-4 flex items-center justify-between">
+            <Link href="/dashboard" className="block text-lg font-semibold text-slate-900">
+              UnitFlow
+            </Link>
+            <UserButton />
+          </div>
           <nav className="space-y-1">
             {dashboardNav.map((item) => (
               <Link

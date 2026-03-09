@@ -5,8 +5,6 @@ export type NavItem = {
 
 export const marketingNav: NavItem[] = [
   { href: "/pricing", label: "Pricing" },
-  { href: "/sign-in", label: "Sign in" },
-  { href: "/sign-up", label: "Start free" },
 ];
 
 export const dashboardNav: NavItem[] = [

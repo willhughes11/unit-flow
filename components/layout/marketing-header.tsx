@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Show, UserButton } from "@clerk/nextjs";
 import { marketingNav } from "@/lib/navigation";
 
 export function MarketingHeader() {
@@ -14,6 +15,23 @@ export function MarketingHeader() {
               {item.label}
             </Link>
           ))}
+          <Show when="signed-out">
+            <Link href="/sign-in" className="text-slate-600 hover:text-slate-900">
+              Sign in
+            </Link>
+            <Link
+              href="/sign-up"
+              className="rounded-md bg-slate-900 px-3 py-2 text-sm font-medium text-white hover:bg-slate-800"
+            >
+              Start free
+            </Link>
+          </Show>
+          <Show when="signed-in">
+            <Link href="/dashboard" className="text-slate-600 hover:text-slate-900">
+              Dashboard
+            </Link>
+            <UserButton />
+          </Show>
         </nav>
       </div>
     </header>
